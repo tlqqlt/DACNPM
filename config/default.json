@@ -1,0 +1,13 @@
+{
+  "app": {
+    "port": "8000",
+    "domain": "localhost"
+  },
+  "db": {
+    "host": "localhost",
+    "username": "root",
+    "password": "Huynhqu4ng117",
+    "database": "DoAn",
+    "dialect": "mysql"
+  }
+}
