@@ -1,0 +1,43 @@
+<%- include('../includes/head') %>
+<div class="container">
+  <div class="jumbotron">
+    <div class="text-center">
+      <h2>SignUp form</h2>
+    </div>
+    <form action="/auth/signup" method="POST">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input
+          class="form-control"
+          id="username"
+          placeholder="Enter username"
+          name="username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter email"
+          name="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="pwd"
+          placeholder="Enter password"
+          name="password"
+        />
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('../includes/end') %>

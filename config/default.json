@@ -9,5 +9,8 @@
     "password": "Huynhqu4ng117",
     "database": "DoAn",
     "dialect": "mysql"
+  },
+  "session": {
+    "key": "^8i@8t@T7xEaJ@*!!R3#**t3*o"
   }
 }

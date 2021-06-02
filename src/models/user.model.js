@@ -1,3 +1,5 @@
+import bcrypt from 'bcrypt';
+
 export default (sequelize, DataTypes) => {
   const User = sequelize.define(
     'User',
@@ -18,7 +20,7 @@ export default (sequelize, DataTypes) => {
       },
       hovaten: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       sodienthoai: {
         type: DataTypes.STRING,
@@ -26,17 +28,28 @@ export default (sequelize, DataTypes) => {
       },
       idKhoa: {
         type: DataTypes.STRING,
+        allowNull: true,
+      },
+      isAdmin: {
+        type: DataTypes.BOOLEAN,
         allowNull: false,
+        defaultValue: false,
       },
       role: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.ENUM,
         allowNull: false,
+        values: ['admin', 'teacher', 'student'],
       },
     },
     {
       underscored: true,
     },
   );
+
+  // eslint-disable-next-line func-names
+  User.prototype.comparePassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+  };
 
   User.associate = (models) => {
     User.belongsTo(models.Khoa, {
